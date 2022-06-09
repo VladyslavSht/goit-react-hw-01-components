@@ -1,0 +1,18 @@
+.description {
+  background-color: antiquewhite;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.stats {
+  display: flex;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
