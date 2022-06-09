@@ -10,13 +10,13 @@ export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
+        height: '100%',
         display: 'flex',
-        // flexDirection: 'column',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101',
+        backgroundColor: '#e2e2e2',
       }}
     >
       <Profile

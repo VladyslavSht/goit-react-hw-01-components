@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
+import s from './FriendListItem.module.css';
 
 function FriendListItem({ name, avatar, isOnline }) {
   return (
-    <li class="item">
-      <span class="status"></span>
-      <img class="avatar" src={avatar} alt="User avatar" width="48" />
-      <p class="name">{name}</p>
+    <li className={s.item}>
+      {isOnline ? (
+        <span className={s.statusOn}></span>
+      ) : (
+        <span className={s.statusOff}></span>
+      )}
+      <span className={s.status}></span>
+      <img className={s.avatar} src={avatar} alt="User avatar" width="60" />
+      <p className={s.name}>{name}</p>
     </li>
   );
 }
@@ -13,6 +19,7 @@ function FriendListItem({ name, avatar, isOnline }) {
 FriendListItem.propTypes = {
   name: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
 
 export default FriendListItem;

@@ -1,18 +1,23 @@
 import PropTypes from 'prop-types';
+import s from './Statistics.module.css';
 
 function Statistics({ title, stats }) {
   return (
-    <section class="statistics">
+    <section className={s.statistics}>
       {title ? (
-        <h2 class="title">{title}</h2>
+        <h2 className={s.title}>{title}</h2>
       ) : (
-        <h2 class="title">Upload stats</h2>
+        <h2 className={s.title}>Upload stats</h2>
       )}
-      <ul class="stat-list">
+      <ul className={s.statList}>
         {stats.map(stat => (
-          <li class="item" key={stat.id}>
-            <span class="label">{stat.label}</span>
-            <span class="percentage">{stat.percentage}</span>
+          <li
+            style={{ backgroundColor: generateColor() }}
+            className={s.item}
+            key={stat.id}
+          >
+            <span className={s.label}>{stat.label}</span>
+            <span className={s.percentage}>{stat.percentage}</span>
           </li>
         ))}
       </ul>
@@ -30,5 +35,9 @@ Statistics.propTypes = {
     })
   ),
 };
+
+function generateColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
 
 export default Statistics;
