@@ -13,11 +13,11 @@ function TransactionHistory({ items }) {
       </thead>
 
       <tbody>
-        {items.map(item => (
-          <tr className={s.tableLine} key={item.id}>
-            <td className={s.tableField}>{item.type}</td>
-            <td className={s.tableField}>{item.amount}</td>
-            <td className={s.tableField}>{item.currency}</td>
+        {items.map(({ id, type, amount, currency }) => (
+          <tr className={s.tableLine} key={id}>
+            <td className={s.tableField}>{type}</td>
+            <td className={s.tableField}>{amount}</td>
+            <td className={s.tableField}>{currency}</td>
           </tr>
         ))}
       </tbody>

@@ -4,20 +4,16 @@ import s from './Statistics.module.css';
 function Statistics({ title, stats }) {
   return (
     <section className={s.statistics}>
-      {title ? (
-        <h2 className={s.title}>{title}</h2>
-      ) : (
-        <h2 className={s.title}>Upload stats</h2>
-      )}
+      {title && <h2 className={s.title}>{title}</h2>}
       <ul className={s.statList}>
-        {stats.map(stat => (
+        {stats.map(({ id, label, percentage }) => (
           <li
             style={{ backgroundColor: generateColor() }}
             className={s.item}
-            key={stat.id}
+            key={id}
           >
-            <span className={s.label}>{stat.label}</span>
-            <span className={s.percentage}>{stat.percentage}</span>
+            <span className={s.label}>{label}</span>
+            <span className={s.percentage}>{percentage}</span>
           </li>
         ))}
       </ul>
